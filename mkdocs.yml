@@ -1,0 +1,69 @@
+site_name: Evergreen — the living GenAI handbook
+site_description: >-
+  GenAI concepts distilled and kept current by an agent (the Gardener).
+  Every page carries a last-verified date; stale claims get pull requests.
+site_url: https://inderpun.github.io/evergreen/
+repo_url: https://github.com/inderpun/evergreen   # created at publish time
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      toggle: { icon: material/weather-night, name: dark mode }
+    - scheme: slate
+      primary: teal
+      toggle: { icon: material/weather-sunny, name: light mode }
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc: { permalink: true }
+  - pymdownx.superfences
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - The Stream:                      # weekly digests of what shipped (Gardener-written)
+      - stream/index.md
+  - Foundations:
+      - foundations/index.md
+      - Tokens & tokenization: foundations/tokenization.md
+      - Embeddings: foundations/embeddings.md
+      - Attention & transformers: foundations/transformers.md
+      - Sampling & decoding: foundations/sampling.md
+      - Context windows: foundations/context-windows.md
+  - Models:
+      - models/index.md
+      - The model landscape: models/landscape.md
+      - Finetuning (LoRA/QLoRA/PEFT): models/finetuning.md
+      - Quantization: models/quantization.md
+      - Reasoning & test-time compute: models/test-time-compute.md
+  - RAG:
+      - rag/index.md
+      - Vector databases: rag/vector-databases.md
+      - Chunking strategies: rag/chunking.md
+      - Retrieval & reranking: rag/retrieval-reranking.md
+      - RAG evaluation: rag/rag-evals.md
+  - Agents:
+      - agents/index.md
+      - Agent patterns: agents/patterns.md
+      - MCP (Model Context Protocol): agents/mcp.md
+      - Multi-agent systems: agents/multi-agent.md
+      - Agent memory: agents/memory.md
+  - Evals:
+      - evals/index.md
+      - Benchmarks & their limits: evals/benchmarks.md
+      - LLM-as-judge: evals/llm-as-judge.md
+      - Preference modeling & reward models: evals/preference-modeling.md
+      - Calibration: evals/calibration.md
+  - Production:
+      - production/index.md
+      - Observability & tracing: production/observability.md
+      - Cost engineering: production/cost.md
+      - Safety & guardrails: production/safety.md
